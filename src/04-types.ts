@@ -9,12 +9,78 @@
  */
 //!======================================================
 // union: дозволяє кілька варіантів типу (number | string) без any.
+
+// type UserAge = string | number;
+// const age: UserAge = "25";
+
+// type PhoneNumber = string | null;
+// const phoneNumber: PhoneNumber = null;
+
 //!======================================================
 // літеральні типи: обмежують значення до конкретних рядків/чисел, зручно для статусів/ролей.
+
+// type InsertPosition = "afterbegin" | "beforebegin" | "afterend" | "beforeend";
+
+// type UserRole = "student" | "admin" | "teacher";
+
+// interface User {
+//   firstName: string;
+//   lastName: string;
+//   role: UserRole;
+// }
+
+// const user: User = {
+//   firstName: "Vasya",
+//   lastName: "Vasylenko",
+//   role: "admin",
+// };
 //!======================================================
 // type guards: перевірка typeof/Array.isArray/"prop" in звужує union до конкретного варіанта.
-//!======================================================
 
+// function foo(userAge: string | number) {
+//   if (typeof userAge === "string") {
+//     userAge.toUpperCase();
+//   } else {
+//     console.log;
+//   }
+// }
+// foo("25");
+
+// function foo(value: number[] | number) {
+//   if (Array.isArray(value)) {
+//     value.pop();
+//   } else {
+//     value.toFixed();
+//   }
+// }
+
+// interface Student {
+//   firstName: string;
+//   lastName: string;
+//   phoneNumber?: string;
+//   role: "student";
+// }
+
+// interface Teacher {
+//   firstName: string;
+//   lastName: string;
+//   phoneNumber?: string;
+//   role: "teacher";
+//   salary: number;
+// }
+
+// type User = Student | Teacher;
+
+// function showUserInfo(user: User) {
+//   console.log(user.firstName);
+//   console.log(user.lastName);
+
+//   if (user.role === "teacher") {
+//     console.log(user.salary);
+//   }
+// }
+
+//!======================================================
 
 //!======================================================
 /* 🧩 Task 1 — ідентифікатор
@@ -33,14 +99,3 @@ export const nextStatus = (status: OrderStatus): OrderStatus => {
   if (status === "pending") return "shipped";
   return "done";
 };
-
-/* 🧩 Task 3 — type guard
- * Додай звуження типу для різних форм payload.
- */
-export type Payload = { type: "text"; value: string } | { type: "count"; value: number };
-export function handlePayload(payload: any) {
-  if (payload.type === "text") {
-    return payload.value.trim();
-  }
-  return payload.value + 1;
-}
