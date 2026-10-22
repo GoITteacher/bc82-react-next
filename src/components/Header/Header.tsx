@@ -1,12 +1,18 @@
-import css from "./Header.module.css";
+import Logo from "./Logo/Logo";
+import Navigation from "./Navigation/Navigation";
+import Tools from "./Tools/Tools";
 
-const Header = () => {
+interface HeaderProps {
+  x: string;
+  title: string;
+}
+
+export default function Header({ x, title }: HeaderProps) {
   return (
-    <header className={css.header}>
-      <div className={css.brand}>Book Haven</div>
-      <p className={css.tagline}>Місце, де кожна добірка натхненна</p>
+    <header>
+      <Logo />
+      <Navigation />
+      <Tools />
     </header>
   );
-};
-
-export default Header;
+}

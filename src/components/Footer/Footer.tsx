@@ -2,9 +2,10 @@ import css from "./Footer.module.css";
 
 const Footer = () => {
   return (
-    <footer className={css.footer}>
-      <p>© 2026 Book Collective · спокій і натхнення в кожному рядку</p>
-    </footer>
+    <div className={css["footer"]}>
+      <h2 className={css["title"]}>Title</h2>
+      <p className={css["description"]}>Test</p>
+    </div>
   );
 };
 

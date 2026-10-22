@@ -62,8 +62,8 @@
     ],
     "description": "React Functional Component TS"
   },
-  "React Client Component": {
-    "prefix": "rcc",
+  "Next Functional Component": {
+    "prefix": "nfc",
     "body": [
       "\"use client\"",
       "import css from './${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}.module.css';",
@@ -81,5 +81,38 @@
       "export default ${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/};"
     ],
     "description": "Next Functional Component"
+  },
+  "Create Zustand Sotre": {
+    "prefix": "react-zustand",
+    "body": [
+      "import { create } from \"zustand\";",
+      "",
+      "interface ExampleStore {",
+      "  value: number;",
+      "  setValue: (newValue: number) => void;",
+      "  increment: () => void;",
+      "  clearValue: () => void;",
+      "}",
+      "",
+      "export const useExampleStore = create<ExampleStore>()((setStore) => {",
+      "  return {",
+      "    value: 0,",
+      "",
+      "    setValue: (newValue) => {",
+      "      setStore({ value: newValue });",
+      "    },",
+      "",
+      "    increment: () => {",
+      "      setStore((s) => {",
+      "        return { value: s.value + 1 };",
+      "      });",
+      "    },",
+      "",
+      "    clearValue: () => {",
+      "      setStore({ value: 0 });",
+      "    },",
+      "  };",
+      "});"
+    ]
   }
 }

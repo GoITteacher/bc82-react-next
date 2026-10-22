@@ -1,0 +1,106 @@
+.bookCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  width: 100%;
+  padding: 24px;
+  margin: 20px;
+  max-width: 500px;
+
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.bookCard:hover {
+  transform: translateY(-4px);
+  border-color: #d1d5db;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.bookCard > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Icon + section */
+.bookCard > div:first-child > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bookCard img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.bookCard > div:first-child > div > p {
+  margin: 0;
+
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #6366f1;
+}
+
+/* Slide counter */
+.bookCard > div:first-child > p {
+  margin: 0;
+
+  font-size: 13px;
+  font-weight: 500;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+/* Title */
+.bookCard h5 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  color: #111827;
+}
+
+/* Description */
+.bookCard > p:last-child {
+  margin: 0;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bookCard {
+    padding: 20px;
+    gap: 12px;
+    border-radius: 12px;
+  }
+
+  .bookCard h5 {
+    font-size: 18px;
+  }
+
+  .bookCard > p:last-child {
+    font-size: 13px;
+  }
+}
