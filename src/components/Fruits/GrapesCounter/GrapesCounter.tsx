@@ -1,13 +1,13 @@
 import css from "./GrapesCounter.module.css";
 
 interface GrapesCounterProps {
-  incrementGrapes: () => void;
+  handleIncrement: () => void;
 }
 
-const GrapesCounter = ({ incrementGrapes }: GrapesCounterProps) => {
+const GrapesCounter = ({ handleIncrement }: GrapesCounterProps) => {
   return (
     <div className={css["grapesCounter"]}>
-      <button onClick={incrementGrapes}>Grapes +</button>
+      <button onClick={handleIncrement}>Grapes++</button>
     </div>
   );
 };

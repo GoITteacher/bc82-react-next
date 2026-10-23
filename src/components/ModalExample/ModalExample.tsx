@@ -3,21 +3,22 @@ import Modal from "../Modal/Modal";
 import css from "./ModalExample.module.css";
 
 const ModalExample = () => {
-  const [isShowModal, setIsShowModal] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const openModal = () => {
-    setIsShowModal(true);
+    setIsVisible(true);
   };
 
   const closeModal = () => {
-    setIsShowModal(false);
+    setIsVisible(false);
   };
 
   return (
     <div className={css["modalExample"]}>
       <h1>Modal</h1>
       <button onClick={openModal}>Open Modal</button>
-      {isShowModal && <Modal onClose={closeModal} />}
+
+      {isVisible && <Modal closeModal={closeModal} />}
     </div>
   );
 };

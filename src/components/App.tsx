@@ -6,22 +6,32 @@ import Listener from "./Listener/Listener";
 import Modal from "./Modal/Modal";
 import ObjectExample from "./ObjectExample/ObjectExample";
 import ModalExample from "./ModalExample/ModalExample";
+import TestClick from "./TestClick/TestClick";
+import Accordion from "./Accordion/Accordion";
 
 export default function App() {
   return (
     <div>
       {/* Прослуховувач */}
-      <Listener />
+      {/* <TestClick /> */}
+      {/* <Listener /> */}
 
       {/* СТАН */}
-      <CounterExample />
-      <CounterExample />
-      <CounterExample />
 
-      <Fruits />
-      <ArrayExample />
-      <ObjectExample />
-      <ModalExample />
+      {/* <CounterExample />
+      <CounterExample />
+      <CounterExample /> */}
+
+      {/* <Fruits /> */}
+      {/* <ModalExample /> */}
+
+      {/* <Accordion />
+      <Accordion />
+      <Accordion />
+      <Accordion /> */}
+
+      {/* <ArrayExample /> */}
+      {/* <ObjectExample /> */}
     </div>
   );
 }

@@ -1,14 +1,23 @@
 import css from "./Modal.module.css";
+
 interface ModalProps {
-  onClose: () => void;
+  closeModal: () => void;
 }
 
-const Modal = ({ onClose }: ModalProps) => {
+const Modal = ({ closeModal }: ModalProps) => {
+  const handleBackdropClick = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    if (e.target === e.currentTarget) {
+      closeModal();
+    }
+  };
+
   return (
-    <div className={css["backdrop"]}>
+    <div className={css["backdrop"]} onClick={handleBackdropClick}>
       <div className={css["modal"]}>
-        <h5>Modal</h5>
-        <button onClick={onClose}>Close</button>
+        <h5>Modal INFO</h5>
+        <button onClick={closeModal}>Close</button>
       </div>
     </div>
   );

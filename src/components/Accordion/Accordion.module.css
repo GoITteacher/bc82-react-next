@@ -1,0 +1,17 @@
+.container {
+  border: 1px solid black;
+  width: 500px;
+  padding: 0px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.container h3 {
+  cursor: pointer;
+}
+
+.container > * {
+  border: 1px solid black;
+  margin: 0;
+  padding: 5px;
+}
