@@ -121,6 +121,7 @@ const BookList = () => {
         {books.map((item, i) => {
           return (
             <BookCard
+              key={item.title}
               icon={item.icon}
               section={item.section}
               currentSlide={item.currentSlide}

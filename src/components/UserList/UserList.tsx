@@ -119,7 +119,7 @@ const UserList = () => {
   return (
     <ul className={css["userList"]}>
       {users.map((user) => {
-        return <UserCard data={user} />;
+        return <UserCard data={user} key={user.id} />;
       })}
     </ul>
   );
