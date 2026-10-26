@@ -1,4 +1,4 @@
-import axios from "axios";
+import { serverApi } from "./serverConfig";
 
 export interface Movie {
   _id: string;
@@ -29,9 +29,8 @@ export const getMovies = async (title: string) => {
     title: title,
   };
 
-  const url =
-    "https://q10gsl5s9d.execute-api.us-east-1.amazonaws.com/public/movies";
-
-  const res = await axios.get<GetMoviesResponse>(url, { params });
+  const res = await serverApi.get<GetMoviesResponse>("/public/movies", {
+    params,
+  });
   return res.data;
 };

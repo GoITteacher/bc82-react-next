@@ -1,4 +1,5 @@
 import axios from "axios";
+import { serverApi } from "./serverConfig";
 
 export interface Song {
   _id: string;
@@ -29,10 +30,9 @@ export const fetchSongs = async (artist: string) => {
     artist: artist,
   };
 
-  const res = await axios.get<FetchSongsResponse>(
-    "https://q10gsl5s9d.execute-api.us-east-1.amazonaws.com/public/songs",
-    { params }
-  );
+  const res = await serverApi.get<FetchSongsResponse>("/public/songs", {
+    params,
+  });
 
   return res.data;
 };

@@ -1,4 +1,5 @@
 import axios from "axios";
+import { serverApi } from "./serverConfig";
 
 export interface Car {
   _id: string;
@@ -30,9 +31,6 @@ export const getCars = async (page: string) => {
     perPage: 3,
   };
 
-  const url =
-    "https://q10gsl5s9d.execute-api.us-east-1.amazonaws.com/public/cars";
-
-  const res = await axios.get<GetCarsResponse>(url, { params });
+  const res = await serverApi.get<GetCarsResponse>("/public/cars", { params });
   return res.data;
 };
