@@ -1,0 +1,9 @@
+.movies {
+  display: flex;
+  flex-direction: column;
+}
+
+.movies ul {
+  display: flex;
+  flex-direction: column;
+}

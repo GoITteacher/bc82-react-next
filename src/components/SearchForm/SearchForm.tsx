@@ -1,9 +1,18 @@
 import css from "./SearchForm.module.css";
 
-export default function SearchForm() {
+interface SearchFormProps {
+  callback: (value: string) => void;
+}
+
+export default function SearchForm({ callback }: SearchFormProps) {
+  const handleSubmit = (formData: FormData) => {
+    const value = formData.get("value") as string;
+    callback(value);
+  };
+
   return (
-    <form className={css.form}>
-      <input className={css.input} type="text" name="topic" />
+    <form action={handleSubmit} className={css.form}>
+      <input className={css.input} type="text" name="value" />
       <button type="submit">Search</button>
     </form>
   );

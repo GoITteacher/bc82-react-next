@@ -1,0 +1,9 @@
+.cars {
+  display: flex;
+  flex-direction: column;
+}
+
+.cars ul {
+  display: flex;
+  flex-direction: column;
+}
