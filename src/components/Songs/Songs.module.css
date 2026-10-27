@@ -1,0 +1,15 @@
+.songs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.songs ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.pagination {
+  display: flex;
+  flex-direction: row;
+}
