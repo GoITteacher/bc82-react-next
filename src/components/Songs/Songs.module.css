@@ -1,0 +1,9 @@
+.songs {
+  display: flex;
+  flex-direction: column;
+}
+
+.songs > ul {
+  display: flex;
+  flex-direction: column;
+}
