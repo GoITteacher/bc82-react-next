@@ -1,28 +1,30 @@
 import axios from "axios";
-import type { NewTaskData, Task, TaskUpdateData } from "../types/task";
+import type {
+  GetTasksParams,
+  NewTaskData,
+  Task,
+  TaskUpdateData,
+} from "../types/task";
 
-axios.defaults.baseURL = "https://62584f320c918296a49543e7.mockapi.io";
+axios.defaults.baseURL =
+  "https://q10gsl5s9d.execute-api.us-east-1.amazonaws.com";
 
-export const getTasks = async (searchQuery: string) => {
-  const res = await axios.get<Task[]>("/tasks", {
-    params: {
-      search: searchQuery,
-    },
-  });
+export const getTasks = async (params: GetTasksParams) => {
+  const res = await axios.get<{ todos: Task[] }>("/todos", { params });
   return res.data;
 };
 
 export const deleteTask = async (taskId: string) => {
-  const res = await axios.delete(`/tasks/${taskId}`);
+  const res = await axios.delete(`/todos/${taskId}`);
   return res.data;
 };
 
 export const addTask = async (taskData: NewTaskData) => {
-  const res = await axios.post<Task>("/tasks", taskData);
+  const res = await axios.post<Task>("/todos", taskData);
   return res.data;
 };
 
 export const updateTask = async (updatedTask: TaskUpdateData) => {
-  const res = await axios.put<Task>(`/tasks/${updatedTask.id}`, updatedTask);
+  const res = await axios.patch<Task>(`/todos/${updatedTask.id}`, updatedTask);
   return res.data;
 };
