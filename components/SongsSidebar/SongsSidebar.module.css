@@ -1,0 +1,4 @@
+.songsSidebar {
+  display: flex;
+  flex-direction: column;
+}

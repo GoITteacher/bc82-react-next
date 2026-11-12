@@ -1,0 +1,7 @@
+.layout {
+  display: flex;
+  margin: 150px;
+  padding: 10px;
+  border: 1px solid black;
+  gap: 50px;
+}

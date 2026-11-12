@@ -6,9 +6,9 @@ interface PageProps {
 
 const Page = async ({ params }: PageProps) => {
   const { arr } = await params;
-  const [year, make, model, color] = arr;
+  const [type, year, make, model, color] = arr;
 
-  const query = year === "all" ? null : { year, make, model, color };
+  const query = type === "all" ? null : { year, make, model, color };
   const res = await getCars(query);
 
   return (
