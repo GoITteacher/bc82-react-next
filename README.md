@@ -12,3 +12,22 @@
   - використали Modal з router.back()
   - винесли @modal з (public routes) – щоб працювало
   - перезапустили проєкт – обов’язково.
+
+https://otto-zimmermann.store/
+
+```text
+app/
+├── inbox/
+│   ├── layout.tsx
+│   ├── @main/
+│   │   └── default.tsx          ← контент
+│   └── @sidebar/
+│       ├── page.tsx          ← сайдбар
+│       ├── filters/
+│       │   └── page.tsx      ← фільтри
+│       ├── folders/
+│       │   └── page.tsx      ← шось якісь папки
+│       └── settings/
+│           └── page.tsx      ← налаштування
+
+```
