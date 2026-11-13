@@ -1,7 +1,4 @@
-import {
-  BarChartMock,
-  ChartCard,
-} from "../../../../components/ChartCard/ChartCard";
+import { BarChartMock, ChartCard } from "@/components/ChartCard/ChartCard";
 import { sleep } from "@/utils/sleep";
 import css from "./Page.module.css";
 

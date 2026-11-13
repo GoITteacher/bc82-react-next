@@ -1,18 +1,18 @@
 import { getSongs } from "@/lib/songs";
 import css from "./Page.module.css";
 import Link from "next/link";
+import { sleep } from "@/utils/sleep";
 
 const Page = async () => {
-  const res = await getSongs();
-  const songs = res.items;
+  await sleep(5000);
+  const songsData = await getSongs();
+
   return (
     <div className={css["page"]}>
-      {songs.map((el) => {
+      {songsData.items.map((el) => {
         return (
           <li>
-            <Link href={`/songs/${el._id}`}>
-              {el.title} - {el.artist}
-            </Link>
+            <Link href={`/songs/${el._id}`}>{el.title}</Link>
           </li>
         );
       })}

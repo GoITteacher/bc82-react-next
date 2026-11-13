@@ -1,12 +1,15 @@
 import { getSongById } from "@/lib/songs";
 import css from "./Page.module.css";
+import Link from "next/link";
 import BackButton from "@/components/BackButton/BackButton";
+
 interface PageProps {
-  params: Promise<{ id: string }>;
+  params: Promise<{ songId: string }>;
 }
+
 const Page = async ({ params }: PageProps) => {
-  const { id } = await params;
-  const song = await getSongById(id);
+  const { songId } = await params;
+  const song = await getSongById(songId);
 
   return (
     <div className={css["backdrop"]}>

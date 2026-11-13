@@ -1,4 +1,4 @@
-import css from "./Layout.module.css";
+import css from "./layout.module.css";
 
 interface LayouProps {
   activity: React.ReactNode;

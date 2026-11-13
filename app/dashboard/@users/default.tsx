@@ -1,7 +1,4 @@
-import {
-  BubbleChartMock,
-  ChartCard,
-} from "../../../components/ChartCard/ChartCard";
+import { BubbleChartMock, ChartCard } from "@/components/ChartCard/ChartCard";
 import { sleep } from "@/utils/sleep";
 
 const Default = async () => {

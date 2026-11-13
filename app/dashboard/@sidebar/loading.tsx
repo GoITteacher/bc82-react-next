@@ -1,4 +1,4 @@
-import { SidebarSkeleton } from "../../../components/DashboardSkeleton/DashboardSkeleton";
+import { SidebarSkeleton } from "@/components/DashboardSkeleton/DashboardSkeleton";
 
 const Loading = () => {
   return <SidebarSkeleton />;

@@ -1,7 +1,4 @@
-import {
-  ChartCard,
-  PieChartMock,
-} from "../../../../components/ChartCard/ChartCard";
+import { ChartCard, PieChartMock } from "@/components/ChartCard/ChartCard";
 import { sleep } from "@/utils/sleep";
 
 const Page = async () => {
