@@ -1,9 +1,18 @@
 import Link from "next/link";
 import styles from "./page.module.css";
+import { Metadata } from "next";
+import Timer from "@/components/Timer/Timer";
+
+export const metadata: Metadata = {
+  title: "Rozetka",
+  description:
+    "Browse curated categories, inspect detailed descriptions, and learn how TanStack Query keeps everything snappy.",
+};
 
 export default function Home() {
   return (
     <div className={styles.page}>
+      <Timer />
       <section className={styles.hero}>
         <span className={styles.badge}>Next.js Playground</span>
         <h1 className={styles.title}>
@@ -18,6 +27,7 @@ export default function Home() {
           <Link className={styles.primaryAction} href="/products">
             Explore products
           </Link>
+          <img src="" alt="test" />
           <a
             className={styles.secondaryAction}
             href="https://nextjs.org/docs"

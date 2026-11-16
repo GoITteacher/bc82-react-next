@@ -4,6 +4,33 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 
+export const metadata: Metadata = {
+  title: "Cocktails",
+  description: "Cocktail List",
+
+  openGraph: {
+    title: "Cocktails",
+    description: "Cocktail List",
+    url: "http://localhost:3000/cocktails",
+    images: [
+      {
+        url: "......",
+        alt: "awdawdawd",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: "music.song",
+  },
+
+  twitter: {
+    title: "Cocktails",
+    description: "Cocktail List",
+    images: [".........."],
+    card: "summary_large_image",
+  },
+};
+
 const Page = async () => {
   const cocktails = await getRandomCocktails();
   return (
@@ -32,7 +59,7 @@ const Page = async () => {
               <li key={el._id} className={styles.card}>
                 <Link className={styles.cardLink} href={`/cocktails/${el._id}`}>
                   <div className={styles.cardMedia}>
-                    <img
+                    <Image
                       className={styles.cardImage}
                       src={el.drinkThumb}
                       alt={el.drink}
