@@ -2,11 +2,10 @@
 
 import Link from "next/link";
 import css from "./AppHeader.module.css";
-import { selectChangeLang, selectLang, useLangStore } from "@/stores/langStore";
+import { useAuthStore } from "@/stores/authStore";
 
 export default function AppHeader() {
-  const lang = useLangStore(selectLang);
-  const changeLang = useLangStore(selectChangeLang);
+  const isAuth = useAuthStore((s) => s.isAuth);
 
   return (
     <header className={css.header}>
@@ -15,21 +14,17 @@ export default function AppHeader() {
           <Link href="/">Home</Link>
         </li>
         <li>
-          <Link href="/tasks">Tasks</Link>
+          <Link href="/">Tasks</Link>
         </li>
         <li>
-          <Link href="/bucket">Bucket</Link>
+          <Link href="/">Bucket</Link>
         </li>
       </ul>
-      <select
-        name="lang"
-        value={lang}
-        onChange={(e) => changeLang(e.target.value)}
-      >
-        <option value="en">En</option>
-        <option value="ua">Ua</option>
-        <option value="pl">Pl</option>
-      </select>
+
+      <div>
+        {!isAuth && <Link href="/sign-in">Sign In</Link>}
+        {isAuth && <button>LogOut</button>}
+      </div>
     </header>
   );
 }

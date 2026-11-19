@@ -1,3 +1,5 @@
 .page {
   font-family: var(--font-geist-sans);
+  padding: 50px;
+  width: 90vw;
 }
