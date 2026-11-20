@@ -1,33 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { globalApi } from "../../globalApi";
-import { getAuthHeaders, getAxiosErrorPayload } from "../_helpers/requestHelpers";
+import { globalApi } from "../globalApi";
 
 export const POST = async (request: NextRequest) => {
-  const headers = await getAuthHeaders();
+  const payload = await request.json();
+  const res = await globalApi.post("/news", payload);
 
-  if (!headers) {
-    return NextResponse.json(
-      { error: "Unauthorized" },
-      {
-        status: 401,
-      }
-    );
-  }
-
-  try {
-    const payload = await request.json();
-    const res = await globalApi.post("/news", payload, { headers });
-
-    return NextResponse.json(res.data, {
-      status: res.status,
-    });
-  } catch (error) {
-    const axiosPayload = getAxiosErrorPayload(error);
-    return NextResponse.json(
-      { error: axiosPayload.message },
-      {
-        status: axiosPayload.status,
-      }
-    );
-  }
+  return NextResponse.json(res.data, {
+    status: res.status,
+  });
 };

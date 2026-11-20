@@ -13,9 +13,10 @@ export const register = async (data: RegisterBody) => {
 };
 
 export const refreshSession = async () => {
-  const res = await nextApi.post<{ success: boolean }>("/auth/session");
+  const res = await nextApi.post<{ success: boolean }>("/auth/refresh");
   return res.data.success;
 };
+
 export const getMe = async () => {
   const res = await nextApi.get<User>("/auth/me");
   return res.data;
