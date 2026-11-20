@@ -12,6 +12,7 @@ const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     const fetchUser = async () => {
       console.log("START REFRESH");
       const isAuthorized = await refreshSession();
+
       if (isAuthorized) {
         const user = await getMe();
         if (user) {

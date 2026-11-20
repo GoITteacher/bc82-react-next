@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Tasks", href: "/tasks" },
   { label: "Notes", href: "/notes" },
   { label: "News", href: "/news" },
+  { label: "Profile", href: "/profile" },
 ];
 
 const secondaryLinks = [
